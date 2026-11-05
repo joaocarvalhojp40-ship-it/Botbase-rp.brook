@@ -1,0 +1,60 @@
+# Coloque este arquivo em:  .github/workflows/protect-signature.yml
+# (o GitHub só executa workflows dessa pasta)
+name: Proteger créditos e segredos
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  protect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Arquivos de proteção e créditos existem
+        run: |
+          for f in LICENSE BRAND.md SECURITY.md CODEOWNERS config/credits.js src/services/credits.js; do
+            test -f "$f" || { echo "::error::Arquivo protegido ausente: $f"; exit 1; }
+          done
+
+      - name: Créditos do autor intactos
+        run: |
+          grep -q "eljoaogg" config/credits.js || { echo "::error::Crédito 'eljoaogg' removido de config/credits.js"; exit 1; }
+          grep -q "Hyper Squad" config/credits.js || { echo "::error::Crédito 'Hyper Squad' removido de config/credits.js"; exit 1; }
+          grep -q "joaocarvalhojp40-ship-it" config/credits.js || { echo "::error::Link do autor removido de config/credits.js"; exit 1; }
+          grep -q "credits.verify" src/bot.js || { echo "::error::Verificação de créditos removida de src/bot.js"; exit 1; }
+          grep -q "applyBio" src/events/ready.js || { echo "::error::Crédito na biografia do bot removido de src/events/ready.js"; exit 1; }
+
+      - name: Cabeçalho de créditos em todos os arquivos .js
+        run: |
+          missing=$(git ls-files '*.js' | xargs grep -L "eljoaogg" || true)
+          if [ -n "$missing" ]; then
+            echo "::error::Arquivos sem o cabeçalho de créditos:"; echo "$missing"; exit 1
+          fi
+
+      - name: Nenhum token ou segredo no repositório
+        run: |
+          if grep -RInE '[MNO][A-Za-z0-9_-]{23,25}\.[A-Za-z0-9_-]{6}\.[A-Za-z0-9_-]{27,}' --exclude-dir=.git --exclude-dir=node_modules .; then
+            echo "::error::Possível token do Discord encontrado! Gere um novo token (Reset Token) e remova-o do histórico."; exit 1
+          fi
+          tracked=$(git ls-files .env config/secrets.js db.json)
+          if [ -n "$tracked" ]; then
+            echo "::error::Arquivos privados versionados: $tracked"; exit 1
+          fi
+
+      - name: Terceiros não podem alterar arquivos protegidos
+        if: github.event_name == 'pull_request' && github.event.pull_request.user.login != 'joaocarvalhojp40-ship-it'
+        env:
+          BASE: ${{ github.base_ref }}
+        run: |
+          changed=$(git diff --name-only "origin/$BASE...HEAD")
+          if echo "$changed" | grep -E '^(LICENSE|BRAND\.md|SECURITY\.md|CODEOWNERS|CODE_OF_CONDUCT\.md|config/credits\.js|src/services/credits\.js|\.github/)'; then
+            echo "::error::Este PR altera arquivos protegidos. Somente o autor pode alterá-los."; exit 1
+          fi

@@ -1,0 +1,95 @@
+LICENÇA DE USO COM CRÉDITOS E REVISÃO MANUAL — CNV Bot Base
+Versão 1.0
+
+Copyright (c) 2026 eljoaogg (João) · Hyper Squad. Todos os direitos reservados,
+exceto o que esta licença concede expressamente.
+
+Esta é uma licença própria ("source-available"). Ela NÃO é uma licença de
+código aberto aprovada pela OSI (como MIT ou GPL) e NÃO permite uso livre.
+Leia tudo antes de usar, copiar ou modificar este software.
+
+1. DEFINIÇÕES
+   1.1 "Software": todo o código-fonte, arquivos de configuração, documentação
+       e demais arquivos deste repositório (CNV Bot Base).
+   1.2 "Autor": eljoaogg (João), contato: joaocarvalhojp40@gmail.com.
+   1.3 "Licenciado": quem recebe esta licença ao usar uma cópia ou fork do Software.
+   1.4 "Itens Necessários": apenas os arquivos e campos de configuração destinados
+       ao Licenciado: config/ids.js, config/settings.js, config/emojis.js,
+       config/visual.js (somente com recursos visuais PRÓPRIOS), config/questions.js,
+       e os arquivos de segredos locais (.env e config/secrets.js).
+   1.5 "Revisão Manual": análise e aprovação, por escrito, feita pelo Autor.
+   1.6 "Recursos da Hyper Squad": o nome "Cidade Nova Roleplay", a sigla "CNV", o
+       logo, os banners, os emojis, as imagens e os textos da comunidade, que são de
+       uso exclusivo da Hyper Squad (ver BRAND.md).
+
+2. CONCESSÃO
+   Sujeito ao cumprimento de TODAS as condições abaixo, o Autor concede ao
+   Licenciado uma licença pessoal, não exclusiva, intransferível, não
+   sublicenciável e revogável para usar o Software como base do bot do SEU
+   próprio roleplay.
+
+3. CONDIÇÕES OBRIGATÓRIAS
+   3.1 Créditos no código. O Licenciado deve manter, sem alteração: o arquivo
+       config/credits.js, o cabeçalho de créditos presente em cada arquivo .js,
+       o arquivo src/services/credits.js, este LICENSE e os avisos de autoria
+       do README.
+   3.2 Créditos na biografia do bot. O bot em uso deve exibir, na sua biografia
+       ("Sobre mim" / descrição da aplicação no Discord), o crédito ao Autor e à
+       Hyper Squad. O Software já adiciona esse crédito automaticamente; é proibido
+       desativar, ocultar ou contornar esse mecanismo.
+   3.3 Revisão Manual antes do uso. Antes de colocar o bot em produção (qualquer
+       servidor de Discord com outros membros), o Licenciado deve solicitar a
+       Revisão Manual ao Autor, informando o link do repositório/fork e a lista
+       de alterações feitas. O uso em produção só é permitido após aprovação por
+       escrito do Autor.
+   3.4 Alterações limitadas. O Licenciado pode modificar apenas os Itens
+       Necessários. Qualquer alteração na lógica do Software (pasta src/, index.js,
+       package.json, arquivos de proteção e documentação) exige nova Revisão Manual
+       e aprovação prévia por escrito.
+   3.5 Recursos visuais próprios. O Licenciado deve usar banners, emojis, nome e
+       textos próprios. É proibido usar os Recursos da Hyper Squad.
+
+4. PROIBIÇÕES
+   O Licenciado NÃO pode:
+   a) remover, alterar, ocultar ou contornar créditos, avisos de autoria ou o
+      mecanismo de créditos;
+   b) vender, alugar, sublicenciar ou redistribuir o Software (ou derivados) como
+      produto, serviço pago ou "bot privado" de terceiros;
+   c) afirmar ou sugerir que é o autor do Software ou que a Hyper Squad/o Autor
+      endossa o seu projeto;
+   d) usar os Recursos da Hyper Squad;
+   e) contornar proteções do repositório (CODEOWNERS, workflows, regras de branch);
+   f) publicar tokens, chaves ou dados privados no repositório.
+
+5. CONTRIBUIÇÕES
+   Contribuições (pull requests) exigem aprovação manual do Autor. Ao enviar uma
+   contribuição, o contribuidor concede ao Autor o direito de usá-la, modificá-la
+   e distribuí-la como parte do Software, sob esta licença.
+
+6. TERMOS DO GITHUB
+   Nada nesta licença limita os direitos que os Termos de Serviço do GitHub
+   concedem para visualizar e fazer fork de repositórios públicos. O USO do
+   Software (execução em produção, redistribuição ou publicação de derivados)
+   continua sujeito a esta licença.
+
+7. RESCISÃO
+   Esta licença termina automaticamente se qualquer condição for violada. Após o
+   término, o Licenciado deve parar de usar o Software e remover todas as cópias.
+   O Autor pode revogar a licença de quem descumprir estas regras.
+
+8. ISENÇÃO DE GARANTIA
+   O SOFTWARE É FORNECIDO "NO ESTADO EM QUE SE ENCONTRA", SEM GARANTIAS DE
+   QUALQUER TIPO, EXPRESSAS OU IMPLÍCITAS, INCLUINDO ADEQUAÇÃO A UM FIM
+   ESPECÍFICO E AUSÊNCIA DE ERROS.
+
+9. LIMITAÇÃO DE RESPONSABILIDADE
+   O Autor não responde por danos, perdas de dados, banimentos, falhas de
+   hospedagem ou quaisquer prejuízos decorrentes do uso do Software. O
+   Licenciado é o único responsável pelo seu servidor, pelo seu bot e pelo
+   cumprimento dos Termos de Serviço do Discord e do Roblox.
+
+10. LEI APLICÁVEL
+    Esta licença é regida pelas leis da República Federativa do Brasil.
+
+11. CONTATO / PEDIDO DE REVISÃO
+    joaocarvalhojp40@gmail.com

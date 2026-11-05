@@ -1,0 +1,17 @@
+# Todo arquivo exige revisão do dono do repositório.
+# Para valer, ative em: Settings → Branches → Branch protection rule (main)
+#   ✔ Require a pull request before merging
+#   ✔ Require review from Code Owners
+#   ✔ Require status checks to pass (Proteger créditos e segredos)
+
+*                           @joaocarvalhojp40-ship-it
+
+# Arquivos de proteção, créditos e licença
+/LICENSE                    @joaocarvalhojp40-ship-it
+/BRAND.md                   @joaocarvalhojp40-ship-it
+/SECURITY.md                @joaocarvalhojp40-ship-it
+/CODE_OF_CONDUCT.md         @joaocarvalhojp40-ship-it
+/CODEOWNERS                 @joaocarvalhojp40-ship-it
+/config/credits.js          @joaocarvalhojp40-ship-it
+/src/services/credits.js    @joaocarvalhojp40-ship-it
+/.github/                   @joaocarvalhojp40-ship-it
